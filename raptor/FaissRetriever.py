@@ -13,15 +13,15 @@ from .utils import split_text
 
 class FaissRetrieverConfig:
     def __init__(
-        self,
-        max_tokens=100,
-        max_context_tokens=3500,
-        use_top_k=False,
-        embedding_model=None,
-        question_embedding_model=None,
-        top_k=5,
-        tokenizer=tiktoken.get_encoding("cl100k_base"),
-        embedding_model_string=None,
+            self,
+            max_tokens=100,
+            max_context_tokens=3500,
+            use_top_k=False,
+            embedding_model=None,
+            question_embedding_model=None,
+            top_k=5,
+            tokenizer=tiktoken.get_encoding("cl100k_base"),
+            embedding_model_string=None,
     ):
         if max_tokens < 1:
             raise ValueError("max_tokens must be at least 1")
@@ -33,14 +33,14 @@ class FaissRetrieverConfig:
             raise ValueError("max_context_tokens must be at least 1 or None")
 
         if embedding_model is not None and not isinstance(
-            embedding_model, BaseEmbeddingModel
+                embedding_model, BaseEmbeddingModel
         ):
             raise ValueError(
                 "embedding_model must be an instance of BaseEmbeddingModel or None"
             )
 
         if question_embedding_model is not None and not isinstance(
-            question_embedding_model, BaseEmbeddingModel
+                question_embedding_model, BaseEmbeddingModel
         ):
             raise ValueError(
                 "question_embedding_model must be an instance of BaseEmbeddingModel or None"
